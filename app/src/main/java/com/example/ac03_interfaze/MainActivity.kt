@@ -3,11 +3,14 @@ package com.example.ac03_interfaze
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.card.MaterialCardView
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var cardHome: MaterialCardView
+    private lateinit var cardDona: MaterialCardView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,11 +19,20 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-        val cardHome: MaterialCardView = findViewById<>(R.id.seleccio_home)
-        val cardDona: MaterialCardView=findViewById<>(R.id.seleccio_dona)
-        cardHome.setOnClickListener {
-            cardHome.setCardBackgroundColor(Col)
+            initComponents()
+            initListeners()
         }
     }
+    private fun initComponents(){
+        //Inicializamos
+        cardHome=findViewById(R.id.seleccio_home)
+        cardDona=findViewById(R.id.seleccio_dona)
+    }
+    private fun initListeners(){
+        //Asigno eventos
+        cardHome.setOnClickListener {  }
+        cardDona.setOnClickListener {  }
+    }
+    private fun
+
 }

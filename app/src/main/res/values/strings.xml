@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">AC03_Interfaze</string>
+    <string name="title_calculator">B &amp; O BMI CALCULATOR</string>
+    <string name="label_home">Home</string>
+    <string name="label_dona">Dona</string>
+    <string name="label_height">HEIGHh</string>
+    <string name="value_height">160</string>
+    <string name="unit_inches">inches</string>
+    <string name="label_weight">WEIGHT</string>
+    <string name="value_weight">170</string>
+    <string name="desc_subtract_weight">Restar peso</string>
+    <string name="desc_add_weight">Sumar peso</string>
+    <string name="desc_symbol_home">Simbol Home</string>
+    <string name="desc_symbol_dona">Simbol de dona</string>
+    <string name="desc_substract_age">Restar edad</string>
+    <string name="desc_add_age">Sumar edad</string>
+    <string name="label_age">Age</string>
+    <string name="value_age">18</string>
+    <string name="btn_calculate">CALCULATE</string>
+
 </resources>
