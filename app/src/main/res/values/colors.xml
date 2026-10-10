@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="card_background_purple">#2c1f42</color>
+    <color name="background_component_selected">#340057</color>
     <color name="btnColor_grey">#474747</color>
     <color name="secundary_text_color_grey">#C2C2C2</color>
     <color name="main_background">#1e1330</color>
