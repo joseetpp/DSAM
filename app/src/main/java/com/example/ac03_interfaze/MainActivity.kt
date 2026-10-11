@@ -1,13 +1,11 @@
 package com.example.ac03_interfaze
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.text.BoringLayout
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -18,7 +16,7 @@ import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
     private var isMaleSelected:Boolean = true
-    private var isFemaleSelectec: Boolean = false;
+    private var isFemaleSelectec: Boolean = false
     private var currentHeight:Int = 120
     private var currentWeight:Int = 70
     private var currentAge:Int = 18
@@ -26,6 +24,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cardDona: MaterialCardView
     private lateinit var tvHeight: TextView
     private lateinit var rsHeight: RangeSlider
+
+    companion object{
+        const val IMC_KEY = "IMC_RESULT"
+    }
 
     //BTN
     private lateinit var btnSubtractWeight: FloatingActionButton
@@ -98,14 +100,22 @@ class MainActivity : AppCompatActivity() {
             setAge()
         }
         btnCalculate.setOnClickListener {
-            calculateIMC()
+            val result = calculateIMC()
+            navigateToResult(result)
         }
     }
 
-    private fun calculateIMC() {
+    private fun navigateToResult(result:Double) {
+        val intent = Intent(this, ResultIMCActivity::class.java)
+        intent.putExtra(IMC_KEY, result)
+        startActivity(intent)
+
+    }
+
+    private fun calculateIMC(): Double {
         val df = DecimalFormat("#.##")
         val imc = currentWeight/(currentHeight.toDouble()/100 * currentHeight.toDouble()/100)
-        val result = df.format(imc).toDouble()
+        return df.format(imc).toDouble()
     }
 
     private fun setAge() {

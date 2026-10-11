@@ -17,5 +17,25 @@
     <string name="label_age">Age</string>
     <string name="value_age">18</string>
     <string name="btn_calculate">CALCULATE</string>
+    
+    <!--Segunda pagina-->
+    <string name="result">Your Result</string>
+    <string name="top_text">BMI Result</string>
+    <string name="btnReCalculate">Re-Calculate</string>
+    
+    <string name="title_underweight">Underweight</string>
+    <string name="description_underweight">Below the recommended weight</string>
+    
+    <string name="title_nommal">Normal</string>
+    <string name="description_normal">Normal</string>
+    
+    <string name="title_overweight">Overweight</string>
+    <string name="description_overweight">Above weight</string>
+    
+    <string name="title_obesity">Obesity</string>
+    <string name="description_obesity">You are obese</string>
+    
+    <string name="error_">Error</string>
+    
 
 </resources>
