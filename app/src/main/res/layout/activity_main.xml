@@ -6,16 +6,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:background="@color/main_background"
     tools:context=".MainActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/text_superior"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:backgroundTint="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        app:strokeColor="@android:color/transparent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -25,19 +26,24 @@
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="B &amp; O BMI CALCULATOR"
-                android:textSize="25sp">
-
-            </TextView>
+                android:text="@string/title_calculator"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/seleccio_home"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="180dp"
-
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="16dp"
+        app:cardBackgroundColor="@color/card_background_purple"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seleccio_dona"
         app:layout_constraintTop_toBottomOf="@id/text_superior">
 
         <LinearLayout
@@ -49,30 +55,32 @@
             <ImageView
                 android:layout_width="96dp"
                 android:layout_height="96dp"
-                android:src="@drawable/baseline_male_24"/>
+                android:src="@drawable/baseline_male_24"
+                app:tint="@color/white"
+                android:contentDescription="@string/desc_symbol_home"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Home"
-                android:textStyle="bold"
-                android:textSize="24dp" >
-
-            </TextView>
-
+                android:text="@string/label_home"
+                android:textSize="24sp"
+                android:textColor="@color/secundary_text_color_grey"/>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
+    <!--Card dona-->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/seleccio_dona"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="180dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/card_background_purple"
         app:layout_constraintStart_toEndOf="@+id/seleccio_home"
-        app:layout_constraintTop_toBottomOf="@+id/text_superior">
-
+        app:layout_constraintTop_toBottomOf="@+id/text_superior"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,81 +91,115 @@
             <ImageView
                 android:layout_width="96dp"
                 android:layout_height="96dp"
-                android:src="@drawable/female_symbol_svgrepo_com">
-            </ImageView>
+                android:src="@drawable/female_symbol_svgrepo_com"
+                app:tint="@color/white"
+                android:contentDescription="@string/desc_symbol_dona"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:text="Dona"/>
-
+                android:text="@string/label_dona"
+                android:textColor="@color/secundary_text_color_grey"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+    <!--Card heighd-->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/seleccio_heigh"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/card_background_purple"
+        app:layout_constraintTop_toBottomOf="@+id/seleccio_home"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="0.1"
-                android:text="Heigh"
-                android:textSize="24dp" />
-
-            <TextView
+                android:text="@string/label_height"
+                android:textColor="@color/secundary_text_color_grey"
+                android:textSize="24sp"/>
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:text="160"
-                android:textStyle="bold"
-                android:textSize="50sp" />
+                android:gravity="center"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/tvHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/value_height"
+                    android:textColor="@color/white"
+                    android:textSize="50sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit_inches"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                />
+            </LinearLayout>
 
-            <com.google.android.material.slider.Slider
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rsHeight"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:valueFrom="120"
+                android:valueTo="200"/>
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
+    <!--Card weight-->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/seleccio_weight"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="180dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seleccio_heigh">
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="16dp"
+        app:cardBackgroundColor="@color/card_background_purple"
+        app:layout_constraintTop_toBottomOf="@+id/seleccio_heigh"
+        app:layout_constraintEnd_toStartOf="@+id/seleccio_edat"
+        app:layout_constraintStart_toStartOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="WEIGHT"
-                android:textSize="20sp" />
+                android:text="@string/label_weight"
+                android:textSize="20sp"
+                android:textColor="@color/secundary_text_color_grey"/>
 
             <TextView
-                android:id="@+id/tvWeightNumber"
+                android:id="@+id/tvWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="170"
+                android:text="@string/value_weight"
                 android:textStyle="bold"
-                android:textSize="44sp" />
+                android:textSize="44sp"
+                android:textColor="@color/white"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -166,34 +208,44 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/btnMinus"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="?attr/selectableItemBackgroundBorderless">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
 
-                </ImageButton>
-                <ImageButton
-                    android:id="@+id/btnPlus"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="10dp"
-                    android:background="?attr/selectableItemBackgroundBorderless">
+                    style="?attr/floatingActionButtonStyle"
+                    android:scaleType="center"
+                    android:id="@+id/btnSubtractWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/desc_subtract_weight"
+                    android:backgroundTint="@color/btnColor_grey"
+                    app:srcCompat="@drawable/resta"
+                    app:materialThemeOverlay="@style/ThemeOverlay.Material3Expressive.FloatingActionButton.Primary"/>
 
-                </ImageButton>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnAddWeight"
+                    style="?attr/floatingActionButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/btnColor_grey"
+                    android:contentDescription="@string/desc_add_weight"
+                    app:materialThemeOverlay="@style/ThemeOverlay.Material3Expressive.FloatingActionButton.Primary"
+                    app:srcCompat="@drawable/suma" />
 
             </LinearLayout>
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
+    <!--Card age-->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/seleccio_edat"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="180dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/card_background_purple"
         app:layout_constraintStart_toEndOf="@+id/seleccio_weight"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seleccio_heigh">
 
         <LinearLayout
@@ -206,18 +258,66 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="25sp"
-                android:text="Age">
+                android:text="@string/label_age"
+                android:textColor="@color/secundary_text_color_grey"
+                android:textSize="25sp">
 
             </TextView>
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="18"
-                android:textStyle="bold"
-                android:textSize="44dp">
-            </TextView>
+                android:id="@+id/tvAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/value_age"
+                android:textColor="@color/white"
+                android:textSize="44sp"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+                    android:id="@+id/btnSubtractAge"
+                    style="?attr/floatingActionButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/btnColor_grey"
+                    android:contentDescription="@string/desc_substract_age"
+                    android:scaleType="center"
+                    app:materialThemeOverlay="@style/ThemeOverlay.Material3Expressive.FloatingActionButton.Primary"
+                    app:srcCompat="@drawable/resta">
+
+                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnAddAge"
+                    style="?attr/floatingActionButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/btnColor_grey"
+                    android:contentDescription="@string/desc_add_age"
+                    app:materialThemeOverlay="@style/ThemeOverlay.Material3Expressive.FloatingActionButton.Primary"
+                    app:srcCompat="@drawable/suma" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="@string/btn_calculate"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/accent_purple"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

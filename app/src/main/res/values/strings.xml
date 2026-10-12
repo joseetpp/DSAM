@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">AC03_Interfaze</string>
+    <string name="title_calculator">B &amp; O BMI CALCULATOR</string>
+    <string name="label_home">Home</string>
+    <string name="label_dona">Dona</string>
+    <string name="label_height">HEIGHh</string>
+    <string name="value_height">160</string>
+    <string name="unit_inches">inches</string>
+    <string name="label_weight">WEIGHT</string>
+    <string name="value_weight">170</string>
+    <string name="desc_subtract_weight">Restar peso</string>
+    <string name="desc_add_weight">Sumar peso</string>
+    <string name="desc_symbol_home">Simbol Home</string>
+    <string name="desc_symbol_dona">Simbol de dona</string>
+    <string name="desc_substract_age">Restar edad</string>
+    <string name="desc_add_age">Sumar edad</string>
+    <string name="label_age">Age</string>
+    <string name="value_age">18</string>
+    <string name="btn_calculate">CALCULATE</string>
+    
+    <!--Segunda pagina-->
+    <string name="result">Your Result</string>
+    <string name="top_text">BMI Result</string>
+    <string name="btnReCalculate">Re-Calculate</string>
+    
+    <string name="title_underweight">Underweight</string>
+    <string name="description_underweight">Below the recommended weight</string>
+    
+    <string name="title_nommal">Normal</string>
+    <string name="description_normal">Normal</string>
+    
+    <string name="title_overweight">Overweight</string>
+    <string name="description_overweight">Above weight</string>
+    
+    <string name="title_obesity">Obesity</string>
+    <string name="description_obesity">You are obese</string>
+    
+    <string name="error_">Error</string>
+    
+
 </resources>
